@@ -1,0 +1,15 @@
+# Ignore local dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Ignore production builds
+client/dist/
+
+# Ignore private connection keys
+.env
+server/.env
+
+# Ignore system junk files
+.DS_Store
+*.log
