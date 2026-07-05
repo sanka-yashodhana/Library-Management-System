@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import Modal from '../../components/Modal/Modal';
+import Modal from '../../components/Model/Model';
 import { useAuth } from '../../context/AuthContext';
 import { useBorrowings } from '../../context/BorrowingsContext';
 import { Search, BookOpen, Clock, AlertTriangle, CheckCircle2 } from 'lucide-react';

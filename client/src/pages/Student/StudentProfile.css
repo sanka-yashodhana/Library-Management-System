@@ -1,0 +1,311 @@
+.student-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Profile Hero ── */
+.profile-hero {
+  background: linear-gradient(135deg, #1e2336 0%, #1a2040 60%, #1e2a3a 100%);
+  border-radius: 18px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(59,130,246,0.12);
+}
+
+.profile-hero::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.profile-avatar-large {
+  width: 84px;
+  height: 84px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.profile-hero-info { flex: 1; }
+
+.profile-hero-info h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f1f3f9;
+  margin: 0 0 4px 0;
+}
+
+.profile-id {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 10px 0;
+}
+
+.profile-role-badge {
+  display: inline-block;
+  background: rgba(59,130,246,0.14);
+  color: #3b82f6;
+  border: 1px solid rgba(59,130,246,0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.profile-status-badge {
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-status-badge.active {
+  background: rgba(34,197,94,0.14);
+  color: #4ade80;
+  border: 1px solid rgba(34,197,94,0.25);
+}
+
+/* ── Profile Grid ── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* ── Section Cards ── */
+.profile-section-card {
+  background: #1e2028;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 22px;
+}
+
+.profile-section-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f1f3f9;
+  margin: 0 0 18px 0;
+}
+
+/* ── Info List ── */
+.profile-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info-icon {
+  font-size: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-info-label {
+  font-size: 11px;
+  color: #3a4057;
+  font-weight: 500;
+  margin: 0 0 2px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.profile-info-value {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #c8cdd8;
+  margin: 0;
+}
+
+/* ── Profile Stats ── */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.profile-stat-item {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.psi-value {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.psi-label {
+  font-size: 11.5px;
+  color: #5a6275;
+  font-weight: 500;
+}
+
+/* ── Category Bars ── */
+.profile-categories h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #8b93a5;
+  margin: 0 0 12px 0;
+}
+
+.category-bar-item {
+  margin-bottom: 10px;
+}
+
+.category-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #8b93a5;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.category-bar-track {
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.category-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* ── Membership Card ── */
+.membership-card {
+  background: linear-gradient(135deg, #1e2336 0%, #1a2040 60%, #1e2a3a 100%);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  overflow: hidden;
+  max-width: 580px;
+  border: 1px solid rgba(59,130,246,0.12);
+}
+
+.membership-watermark {
+  position: absolute;
+  right: 20px;
+  font-size: 100px;
+  opacity: 0.03;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.membership-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.membership-logo {
+  font-size: 12px;
+  font-weight: 700;
+  color: #3b82f6;
+  letter-spacing: 0.3px;
+}
+
+.membership-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+.membership-card-right { flex: 1; }
+
+.membership-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f1f3f9;
+  margin: 0 0 4px 0;
+}
+
+.membership-id {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 2px 0;
+  font-family: monospace;
+}
+
+.membership-dept {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 12px 0;
+}
+
+.membership-status {
+  display: inline-block;
+  background: rgba(34,197,94,0.14);
+  color: #4ade80;
+  border: 1px solid rgba(34,197,94,0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .profile-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .profile-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .profile-status-badge { margin: 0 auto; }
+  .profile-stats { grid-template-columns: 1fr 1fr; }
+}

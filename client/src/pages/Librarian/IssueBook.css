@@ -1,0 +1,383 @@
+.issue-book {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.issue-success {
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #059669;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+.issue-error {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.issue-tabs {
+  display: flex;
+  gap: 8px;
+  background: #1e2028;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 6px;
+  width: fit-content;
+}
+
+.issue-tab {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  color: #8b93a5;
+  background: transparent;
+  transition: all 0.2s;
+}
+
+.issue-tab:hover { color: #f1f3f9; }
+
+.issue-tab.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+.issue-form-card {
+  background: #1e2028;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 28px;
+  max-width: 520px;
+}
+
+.issue-form-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f1f3f9;
+  margin: 0 0 4px 0;
+}
+
+.issue-form-card p {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0 0 24px 0;
+}
+
+.issue-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.issue-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.issue-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f3f9;
+}
+
+.issue-select {
+  padding: 11px 14px;
+  border: 1.5px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  font-size: 14px;
+  color: #f1f3f9;
+  background: #1a1c22;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.issue-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+  background: #1e2028;
+}
+
+.issue-details {
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.issue-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.issue-detail-item span {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.issue-detail-item strong {
+  font-size: 14px;
+  color: #f1f3f9;
+  font-weight: 700;
+}
+
+.issue-submit-btn {
+  padding: 13px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 4px 16px rgba(59,130,246,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.issue-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+}
+
+.return-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+}
+
+.return-header p {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0 0 16px 0;
+}
+
+.return-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.return-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #1e2028;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.return-cover {
+  width: 48px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.return-info { flex: 1; min-width: 0; }
+
+.return-book-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f1f3f9;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.return-student {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 6px 0;
+}
+
+.return-dates {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.return-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.status-tag.active { background: rgba(79,70,229,0.1); color: #4f46e5; }
+.status-tag.overdue { background: rgba(239,68,68,0.1); color: #ef4444; }
+
+.accept-return-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.accept-return-btn:hover { opacity: 0.85; }
+
+.empty-panel {
+  background: #1e2028;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty-panel svg { color: #3a4057; opacity: 0.35; }
+.empty-panel p { color: #8b93a5; font-size: 14px; font-weight: 600; margin: 0; }
+
+/* ── Loading state ── */
+.issue-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 300px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255,255,255,0.06);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: lib-spin 0.8s linear infinite;
+}
+
+@keyframes lib-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error state ── */
+.issue-err-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 300px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.issue-err-state svg { color: #f87171; }
+.issue-err-state p { font-size: 14px; max-width: 320px; margin: 0; color: #f87171; }
+
+.issue-retry-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.3);
+}
+
+.issue-retry-btn:hover { 
+  transform: translateY(-1px);
+  opacity: 0.9;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+}
+
+/* ── Toast notifications ── */
+.issue-toast {
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+.issue-toast-success {
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #059669;
+}
+
+.issue-toast-error {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  color: #dc2626;
+}
+
+/* ── Overdue badge on tab ── */
+.overdue-badge {
+  display: inline-block;
+  margin-left: 8px;
+  background: rgba(239,68,68,0.12);
+  color: #ef4444;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ── Disabled button ── */
+.issue-submit-btn:disabled,
+.accept-return-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
