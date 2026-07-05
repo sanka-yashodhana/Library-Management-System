@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useBorrowings } from '../../context/BorrowingsContext';
-import Modal from '../../components/Modal/Modal';
+import Modal from '../../components/Model/Model';
 import { Library, BookOpen, CheckCircle2, AlertTriangle, BookMarked, ArrowLeft, ChevronRight } from 'lucide-react';
 import './BookDetails.css';
 

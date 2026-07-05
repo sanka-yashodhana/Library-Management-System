@@ -1,122 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+// AuthProvider removed; wrapped in main.jsx
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import DashboardLayout from './layouts/DashboardLayout';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Auth
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
 
+// Student Pages
+import StudentDashboard from './pages/Student/StudentDashboard';
+import BrowseBooks from './pages/Student/BrowseBooks';
+import BookDetails from './pages/Student/BookDetails';
+import MyBorrowings from './pages/Student/MyBorrowings';
+import StudentProfile from './pages/Student/StudentProfile';
+
+// Librarian Pages
+import LibrarianDashboard from './pages/Librarian/LibrarianDashboard';
+import ManageBooks from './pages/Librarian/ManageBooks';
+import IssueBook from './pages/Librarian/IssueBook';
+import ManageStudents from './pages/Librarian/ManageStudents';
+
+// Admin Pages
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import ManageUsers from './pages/Admin/ManageUsers';
+import AdminBooks from './pages/Admin/AdminBooks';
+import Reports from './pages/Admin/Reports';
+
+import './App.css';
+
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <BrowserRouter>
+        <Routes>
+          {/* Public */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
 
-      <div className="ticks"></div>
+          {/* Student Routes */}
+          <Route element={
+            <ProtectedRoute allowedRoles={['student']}>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }>
+            <Route path="/student/dashboard" element={<StudentDashboard />} />
+            <Route path="/student/books" element={<BrowseBooks />} />
+            <Route path="/student/books/:id" element={<BookDetails />} />
+            <Route path="/student/borrowings" element={<MyBorrowings />} />
+            <Route path="/student/profile" element={<StudentProfile />} />
+          </Route>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          {/* Librarian Routes */}
+          <Route element={
+            <ProtectedRoute allowedRoles={['librarian']}>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }>
+            <Route path="/librarian/dashboard" element={<LibrarianDashboard />} />
+            <Route path="/librarian/books" element={<ManageBooks />} />
+            <Route path="/librarian/issue" element={<IssueBook />} />
+            <Route path="/librarian/students" element={<ManageStudents />} />
+          </Route>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+          {/* Admin Routes */}
+          <Route element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }>
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/users" element={<ManageUsers />} />
+            <Route path="/admin/books" element={<AdminBooks />} />
+            <Route path="/admin/reports" element={<Reports />} />
+          </Route>
+
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App

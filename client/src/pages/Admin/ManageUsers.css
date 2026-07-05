@@ -1,0 +1,160 @@
+.manage-users {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.manage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manage-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+}
+
+.manage-header p {
+  font-size: 14px;
+  color: #8b93a5;
+  margin: 0;
+}
+
+.success-toast {
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #059669;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-role-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.role-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  background: #1a1d2e;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  color: #8b93a5;
+  transition: all 0.2s;
+}
+
+.role-tab:hover { border-color: #325FE8; color: #325FE8; }
+
+.role-tab.active {
+  background: #1a1d2e;
+  border-color: #1a1d2e;
+  color: #ffffff;
+}
+
+.role-tab-count {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 11px;
+}
+
+.role-tab:not(.active) .role-tab-count {
+  background: rgba(255, 255, 255, 0.06);
+  color: #8b93a5;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #8b93a5;
+  margin: 0;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.role-student { background: rgba(238, 88, 44, 0.1); color: #EE582C; }
+.role-librarian { background: rgba(50, 95, 232, 0.1); color: #325FE8; }
+.role-admin { background: rgba(220, 173, 38, 0.1); color: #DCAD26; }
+
+.status-dot {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-dot.active { color: #325FE8; }
+.status-dot.inactive { color: #A551FF; }
+
+.toggle-status-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.toggle-status-btn.deactivate {
+  background: rgba(165, 81, 255, 0.1);
+  color: #A551FF;
+}
+
+.toggle-status-btn.activate {
+  background: rgba(50, 95, 232, 0.1);
+  color: #325FE8;
+}
+
+.toggle-status-btn:hover { opacity: 0.75; }

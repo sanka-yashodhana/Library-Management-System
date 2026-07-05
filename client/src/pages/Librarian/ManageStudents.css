@@ -1,0 +1,205 @@
+.manage-students {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.manage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manage-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+}
+
+.manage-header p {
+  font-size: 14px;
+  color: #8b93a5;
+  margin: 0;
+}
+
+.student-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.student-sum-card {
+  background: #1e2028;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ssc-icon {
+  font-size: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #8b93a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ssc-val {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+  line-height: 1;
+}
+
+.ssc-label {
+  font-size: 12px;
+  color: #8b93a5;
+  margin: 0;
+}
+
+.student-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.student-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.student-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+}
+
+.student-id {
+  font-size: 12px;
+  color: #8b93a5;
+  margin: 0;
+  font-family: monospace;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.s-active { background: rgba(16,185,129,0.1); color: #10b981; }
+.s-inactive { background: rgba(239,68,68,0.1); color: #ef4444; }
+
+.student-borrow-stats {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.bs-active {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: rgba(50, 95, 232, 0.12);
+  color: #325FE8;
+  border-radius: 10px;
+}
+
+.bs-overdue {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: rgba(220, 173, 38, 0.12);
+  color: #DCAD26;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .student-summary-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .student-summary-cards { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Loading state ── */
+.students-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 300px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255,255,255,0.06);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: lib-spin 0.8s linear infinite;
+}
+
+@keyframes lib-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error state ── */
+.students-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 300px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.students-error svg { color: #f87171; }
+.students-error p { font-size: 14px; max-width: 320px; margin: 0; color: #f87171; }
+
+.students-retry-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.3);
+}
+
+.students-retry-btn:hover { 
+  transform: translateY(-1px);
+  opacity: 0.9;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+}
+

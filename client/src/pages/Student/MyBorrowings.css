@@ -1,0 +1,212 @@
+.my-borrowings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Loading ── */
+.borrowings-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 20px;
+  color: #5a6275;
+  font-size: 14px;
+}
+
+/* loading-spinner is defined in BrowseBooks.css via shared keyframe */
+
+/* ── Header ── */
+.borrowings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.borrowings-header h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+}
+
+.borrowings-header p {
+  font-size: 13.5px;
+  color: #5a6275;
+  margin: 0;
+}
+
+/* ── Browse More Button ── */
+.browse-more-btn {
+  padding: 9px 18px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s, opacity 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.28);
+}
+
+.browse-more-btn:hover { transform: translateY(-1px); opacity: 0.9; }
+
+/* ── Empty State ── */
+.borrowings-empty {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #1e2028;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.borrowings-empty span { font-size: 52px; opacity: 0.35; }
+.borrowings-empty svg  { opacity: 0.35; color: #3a4057; }
+.borrowings-empty h3 { font-size: 18px; font-weight: 700; color: #8b93a5; margin: 0; }
+.borrowings-empty p { font-size: 14px; color: #3a4057; margin: 0 0 8px 0; }
+
+/* ── Success Message ── */
+.return-success {
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  color: #22c55e;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Filter Buttons ── */
+.borrowing-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  color: #5a6275;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover { border-color: rgba(255,255,255,0.15); color: #c8cdd8; }
+
+.filter-btn.active.filter-all    { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); color: #f1f3f9; }
+.filter-btn.active.filter-active  { background: rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.3); color: #3b82f6; }
+.filter-btn.active.filter-overdue { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.25); color: #ef4444; }
+.filter-btn.active.filter-returned{ background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.25); color: #22c55e; }
+
+.filter-count {
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 1px 6px;
+  font-size: 10.5px;
+}
+
+.filter-btn:not(.active) .filter-count {
+  background: rgba(255,255,255,0.05);
+  color: #3a4057;
+}
+
+/* ── Table ── */
+.borrowing-book-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.borrowing-book-cover {
+  width: 38px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+}
+
+.borrowing-book-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8eaf0;
+  margin: 0 0 2px 0;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.borrowing-book-author {
+  font-size: 11.5px;
+  color: #5a6275;
+  margin: 0;
+}
+
+/* ── Status Badges ── */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-active  { background: rgba(59,130,246,0.12); color: #3b82f6; border: 1px solid rgba(59,130,246,0.2); }
+.status-returned{ background: rgba(34,197,94,0.1);  color: #22c55e; border: 1px solid rgba(34,197,94,0.2); }
+.status-overdue { background: rgba(239,68,68,0.1);  color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
+
+.text-muted { color: #3a4057; }
+
+/* ── Buttons ── */
+.return-btn {
+  padding: 7px 14px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(59,130,246,0.25);
+}
+
+.return-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.returned-label {
+  font-size: 12px;
+  color: #3a4057;
+  font-weight: 500;
+}

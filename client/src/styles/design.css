@@ -1,0 +1,77 @@
+/* src/styles/design.css */
+
+:root {
+  /* Color palette - dark theme */
+  --color-bg: #1a1c22;
+  --color-surface: #1e2028;
+  --color-primary: #3b82f6;
+  --color-muted: #5a6275;
+  --color-border: rgba(255,255,255,0.07);
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+
+  /* Typography */
+  --font-family: "Inter", "Roboto", sans-serif;
+  --font-size-base: 14px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+/* Utility classes */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+.px-md {
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+.py-sm {
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+.rounded {
+  border-radius: 8px;
+}
+.text-primary {
+  color: #f1f3f9;
+}
+.text-muted {
+  color: var(--color-muted);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.border {
+  border: 1px solid var(--color-border);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.transition {
+  transition: all 0.2s ease;
+}

@@ -1,0 +1,276 @@
+.librarian-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-welcome.lib {
+  background: #1e2028;
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.welcome-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.badge-role {
+  background: rgba(50, 95, 232, 0.15);
+  color: #325FE8;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.badge-today {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
+
+.welcome-text h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f1f3f9;
+  margin: 0 0 4px 0;
+}
+
+.welcome-text p {
+  font-size: 14px;
+  color: #8b93a5;
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.lib-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.lib-section-card {
+  background: #1e2028;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 20px;
+}
+
+.lib-section-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.lib-section-card-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f1f3f9;
+  margin: 0;
+}
+
+
+
+.today-issues {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF7A00;
+  background: rgba(255,122,0,0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.recent-issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recent-issue-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.recent-issue-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.issue-cover {
+  width: 40px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.issue-info { flex: 1; min-width: 0; }
+
+.issue-book {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f3f9;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.issue-student, .issue-dates {
+  font-size: 12px;
+  color: #8b93a5;
+  margin: 0;
+}
+
+.status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.s-active { background: rgba(50, 95, 232, 0.1); color: #325FE8; }
+.s-overdue { background: rgba(239,68,68,0.1); color: #ef4444; }
+.s-returned { background: rgba(16,185,129,0.1); color: #10b981; }
+
+.category-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.category-stat-item {}
+
+.cat-stat-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.cat-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f3f9;
+}
+
+.cat-counts {
+  font-size: 12px;
+  color: #8b93a5;
+}
+
+.cat-bar-track {
+  height: 7px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cat-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty-state span { font-size: 36px; opacity: 0.35; color: #3a4057; }
+.empty-state svg { color: #3a4057; opacity: 0.35; }
+.empty-state p { color: #8b93a5; font-size: 14px; font-weight: 600; margin: 0; }
+
+@media (max-width: 1100px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .lib-dashboard-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Loading state ── */
+.lib-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 300px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255,255,255,0.06);
+  border-top-color: #325FE8;
+  border-radius: 50%;
+  animation: lib-spin 0.8s linear infinite;
+}
+
+@keyframes lib-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error state ── */
+.lib-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 300px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.lib-error svg { color: #f87171; }
+.lib-error p { font-size: 14px; max-width: 320px; margin: 0; color: #f87171; }
+
+.lib-retry-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #325FE8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(50, 95, 232, 0.3);
+}
+
+.lib-retry-btn:hover { 
+  transform: translateY(-1px);
+  opacity: 0.9;
+  box-shadow: 0 6px 18px rgba(50, 95, 232, 0.4);
+}
