@@ -1,0 +1,41 @@
+# ==========================================
+# 📦 Dependency Folders (Heavy Node Modules)
+# ==========================================
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# ==========================================
+# 🔒 Environment Keys & Secrets (Private Data)
+# ==========================================
+.env
+server/.env
+client/.env
+.env.local
+.env.*.local
+
+# ==========================================
+# 🚀 Production & Build Compilations
+# ==========================================
+client/dist/
+client/build/
+server/dist/
+
+# ==========================================
+# 🛑 System Junk Files & Log Outputs
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# 🛠️ IDE & Editor Settings (Optional)
+# ==========================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
