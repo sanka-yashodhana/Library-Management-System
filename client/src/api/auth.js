@@ -14,7 +14,7 @@ const authApi = {
       }
       return { success: true, user: data.user, token: data.token };
     } catch (err) {
-      return { success: false, error: 'Network error. Is the server running?' };
+      return { success: false, error: 'Network error. Is the server running?',err };
     }
   },
 
@@ -31,7 +31,7 @@ const authApi = {
       }
       return { success: true, user: data.user, token: data.token };
     } catch (err) {
-      return { success: false, error: 'Network error. Is the server running?' };
+      return { success: false, error: 'Network error. Is the server running?',err };
     }
   },
 };
