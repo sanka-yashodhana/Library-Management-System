@@ -1,4 +1,4 @@
-const API_URL = 'https://library-management-system-xi-umber.vercel.app/';
+const API_URL = 'https://library-management-system-xi-umber.vercel.app';
 
 const authApi = {
   login: async (email, password, role) => {
@@ -31,7 +31,7 @@ const authApi = {
       }
       return { success: true, user: data.user, token: data.token };
     } catch (err) {
-      return { success: false, error: 'Network error. Is the server running?',err };
+      return { success: false, error: 'Network error. Is the server running?', err };
     }
   },
 };
