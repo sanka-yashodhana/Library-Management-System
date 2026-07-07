@@ -16,8 +16,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/server/src/index.js"
+      "destination": "/server/src/index.js?path=$1"
     },
-    { "source": "/(.*)", "destination": "/client/dist/index.html" }
+    {
+      "source": "/((?!api/|assets/).*)",
+      "destination": "/index.html"
+    }
   ]
 }
