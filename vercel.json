@@ -8,8 +8,8 @@
     {
       "src": "client/package.json",
       "use": "@vercel/static-build",
-      "settings": {
-        "buildCommand": "vite build"
+      "config": {
+        "buildCommand": "npm run build --prefix client"
       }
     }
   ],
