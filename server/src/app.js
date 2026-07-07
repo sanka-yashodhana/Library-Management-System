@@ -3,7 +3,11 @@ const cors = require("cors");
 
 const express = require("express");
 const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
 const bookRoutes = require("./routes/bookRoutes");
+const borrowingRoutes = require("./routes/borrowingRoutes");
+const userRoutes = require("./routes/userRoutes");
+
 const app = express();
 
 connectDB();
@@ -13,7 +17,10 @@ app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173", creden
 app.use(express.json());
 
 // Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/books", bookRoutes);
+app.use("/api/borrowings", borrowingRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Library Management System API Running");
