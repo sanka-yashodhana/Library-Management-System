@@ -1,4 +1,4 @@
-const API_URL = "https://library-management-system-xi-umber.vercel.app";
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 const booksApi = {
   /**
