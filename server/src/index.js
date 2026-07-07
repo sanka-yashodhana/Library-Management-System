@@ -11,17 +11,21 @@ const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
-// Connect to Database
-connectDB();
+async function setupApp() {
+  // Connect to Database
+  await connectDB();
 
-// Middlewares
-app.use(cors());
-app.use(express.json());
+  // Middlewares
+  app.use(cors()); // You might want to use the same detailed cors config as in app.js
+  app.use(express.json());
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/books", bookRoutes);
-app.use("/api/borrowings", borrowingRoutes);
-app.use("/api/users", userRoutes);
+  // Routes
+  app.use("/api/auth", authRoutes);
+  app.use("/api/books", bookRoutes);
+  app.use("/api/borrowings", borrowingRoutes);
+  app.use("/api/users", userRoutes);
 
-module.exports = app;
+  return app;
+}
+
+module.exports = setupApp();
