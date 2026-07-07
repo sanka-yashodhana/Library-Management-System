@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // AuthProvider removed; wrapped in main.jsx
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-import DashboardLayout from './layouts/DashboardLayout';
+import DashboardLayout from './Layouts/DashboardLayout';
 
 // Auth
 import Login from './pages/Auth/Login';
