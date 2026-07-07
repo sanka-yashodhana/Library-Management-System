@@ -50,18 +50,14 @@ export default function DashboardLayout() {
   const title = pageTitles[location.pathname] ||
     (location.pathname.startsWith('/student/books/') ? 'Book Details' : 'Library Management');
 
-  const sidebarClass = isMobile
-    ? `sidebar${mobileSidebarOpen ? ' mobile-open' : ''}`
-    : undefined;
-
   return (
     <div className={`dashboard-layout ${sidebarCollapsed && !isMobile ? 'sidebar-collapsed' : ''}`}>
-      <div className={sidebarClass}>
-        <Sidebar
+      {/* The Sidebar component will now manage its own classes */}
+      <Sidebar
+        mobileOpen={isMobile && mobileSidebarOpen}
           collapsed={!isMobile && sidebarCollapsed}
           onToggle={handleToggle}
         />
-      </div>
       <div className="dashboard-main">
         <Navbar onMenuToggle={handleToggle} pageTitle={title} />
         <main className="dashboard-content">

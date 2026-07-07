@@ -49,7 +49,7 @@ const roleLabels = {
   admin:     'Admin Portal',
 };
 
-export default function Sidebar({ collapsed, onToggle }) {
+export default function Sidebar({ collapsed, mobileOpen, onToggle }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const links = roleLinks[user?.role] || [];
@@ -61,8 +61,8 @@ export default function Sidebar({ collapsed, onToggle }) {
 
   return (
     <>
-      <div className={`sidebar-overlay ${collapsed ? '' : 'visible'}`} onClick={onToggle} />
-      <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+      <div className={`sidebar-overlay ${mobileOpen ? 'visible' : ''}`} onClick={onToggle} />
+      <aside className={`sidebar ${collapsed ? 'collapsed' : ''} ${mobileOpen ? 'mobile-open' : ''}`}>
         {/* ── Header ── */}
         <div className="sidebar-header">
           <div className="sidebar-logo">
