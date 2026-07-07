@@ -45,4 +45,4 @@ const borrowingSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Borrowing", borrowingSchema);
+module.exports = mongoose.models.Borrowing || mongoose.model("Borrowing", borrowingSchema);
