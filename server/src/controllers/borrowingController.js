@@ -1,5 +1,5 @@
 const Borrowing = require("../models/Borrowing");
-const Book = require("../models/Book");
+const Book = require("../models/book");
 const User = require("../models/User");
 
 // GET /api/borrowings/my  — current user's borrowings
